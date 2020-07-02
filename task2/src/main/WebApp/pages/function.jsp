@@ -7,12 +7,15 @@
 <title>PlantMaster Users</title>
 </head>
 <body>
-<form action="addPlantMaster">
-<input type="text" name="FullName"><br>
-<input type="text" name="DOB"><br>
-<input type="submit"><br>
+
+
+<form method="post" action="details">
+Enter your Full Name:<input type="text" name="FullName">
+Enter your Date Of Birth:<input type="text" name="DOB">
+<input type="submit" value="Submit">
 </form>
-
-
 </body>
 </html>
+
+
+

@@ -1,6 +1,7 @@
 
 package com.example.demo;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,11 +26,12 @@ public class FormController{
 		return "function";
 	
 	}
-	
 	@RequestMapping("/details")
-	public String details(PlantMaster PlantMaster)
+	
+	public String details(PlantMaster customers)
 	{
-		repo.save(PlantMaster);
+		
+		repo.save(customers);
 		return "function";
 	
 	}
@@ -38,18 +40,21 @@ public class FormController{
 	public String getdetails()
 	{
 		
-		return "ViewPlantMaster";
+		return "ViewCustomers";
 	
 	}
 	
-	@PostMapping("/getdetails")
-	public ModelAndView getdetails(@RequestParam String FullName)
+	
+ @PostMapping("/getdetails")
+	
+	public ModelAndView getdetails( @RequestParam String FullName)
+		
 	{
-	ModelAndView mv=new ModelAndView("Retrive");
+	 ModelAndView mv = new ModelAndView("Retrive");
 	PlantMaster customers=repo.findById(FullName).orElse(null);
 	mv.addObject(customers);
 	return mv;
-    }
+	} 
 	
 	
 	@RequestMapping("/customers")
@@ -73,14 +78,14 @@ public class FormController{
 		return customers;
 	}
 	@PutMapping(path="/customers", consumes= {"application/json"})
-	public PlantMaster getCustomers5(@RequestBody PlantMaster customers)
+	public PlantMaster getCustomers4(@RequestBody PlantMaster customers)
 	{
 		repo.save(customers);
 		return customers;
 	}
 	
 	@DeleteMapping("/customers/{FullName}")
-	public PlantMaster getCustomers4(@PathVariable ("FullName") String FullName)
+	public PlantMaster getCustomers5(@PathVariable ("FullName") String FullName)
 	{
 		PlantMaster pm=repo.getOne(FullName);
 		repo.delete(pm);

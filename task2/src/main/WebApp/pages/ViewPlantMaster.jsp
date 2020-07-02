@@ -7,10 +7,11 @@
 <title>Hello PlantMaster</title>
 </head>
 <body>
-<h1>View Details</h1>
+<h1>View Customer Details</h1>
 <h2> Details as submitted as follows: </h2>
-<h4> FullName: ${FullName} </h4>
-<h4> Date Of Birth: ${DOB} </h4>
-
+<form action="getdetails" method="post">
+<input type="FullName" name="FullName">
+<input type="submit" value="Submit">
+</form>
 </body>
 </html>
