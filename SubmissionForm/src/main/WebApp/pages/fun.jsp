@@ -8,13 +8,17 @@
 </head>
 
 <body>
-
-<form method="post" action="details">
+<form action="details"  method ="post">
 Enter Customer ID : <input type="text" name="cid">
 Enter Customer Name : <input type="text" name="cname">
 Enter Customer Email Address : <input type="email" name="cemail">
-<a href="http://localhost:8080/details">Click here for the details</a>
+<input type="submit" value="submit">
+<a href="http://localhost:8080/getdetails">Click here for the details</a>
 </form>
-</body>
 
+
+
+
+
+</body>
 </html>
